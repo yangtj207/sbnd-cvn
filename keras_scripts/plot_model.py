@@ -22,7 +22,7 @@ from keras.utils import plot_model
 ************** PARAMETERS **************
 ****************************************
 '''
-
+'''
 logging.basicConfig(stream=sys.stderr, level=logging.DEBUG)
 
 config = configparser.ConfigParser()
@@ -35,7 +35,7 @@ CHECKPOINT_PREFIX = config['model']['checkpoint_prefix']
 CHECKPOINT_SAVE_MANY = ast.literal_eval(config['model']['checkpoint_save_many'])
 CHECKPOINT_SAVE_BEST_ONLY = ast.literal_eval(config['model']['checkpoint_save_best_only'])
 PRINT_SUMMARY = ast.literal_eval(config['model']['print_summary'])
-
+'''
 
 '''
 ****************************************
@@ -45,8 +45,8 @@ PRINT_SUMMARY = ast.literal_eval(config['model']['print_summary'])
 
 # Load model
 
-logging.info('Loading model from disk...')
-
+#logging.info('Loading model from disk...')
+'''
 if CHECKPOINT_SAVE_MANY:
 
     # Load the last generated model
@@ -66,10 +66,11 @@ else:
     # Load the model
 
     model = load_model(CHECKPOINT_PATH + CHECKPOINT_PREFIX + '.h5')
-   
+'''   
 # Print model summary
 
-if(PRINT_SUMMARY):
-    model.summary()
+model = load_model('../h5_model_dir/multioutput_2x6_hd_fid_old-14-0.89.h5')
+#if(PRINT_SUMMARY):
+model.summary()
 
 plot_model(model, to_file='model.pdf', show_shapes='True')

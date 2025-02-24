@@ -1,0 +1,1 @@
+{"class_name": "CustomTrainStep", "config": {"name": "resnext", "trainable": true, "n_gradients": 4}, "keras_version": "2.14.0", "backend": "tensorflow"}
